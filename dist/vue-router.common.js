@@ -2312,8 +2312,10 @@ History.prototype.confirmTransition = function confirmTransition (route, onCompl
           cb(err);
         });
       } else {
-        warn(false, 'uncaught error during route navigation:');
-        console.error(err);
+        // warn(false, 'uncaught error during route navigatione:');
+        if (err) {
+          console.error(err);
+        }
       }
     }
     onAbort && onAbort(err);
